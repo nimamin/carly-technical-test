@@ -1,4 +1,5 @@
 import { useRouter } from 'next/router'
+import AuthButton from './AuthButton'
 const menu = [
     {
         title: 'Home',
@@ -9,8 +10,8 @@ const menu = [
         href: '/about'
     },
     {
-        title: 'Profile',
-        href: '/profile'
+        title: 'Projects',
+        href: '/projects'
     },
     {
         title: 'Blog',
@@ -57,6 +58,7 @@ export default function Navbar() {
                     </li>
                      */}
                 </ul>
+                <AuthButton />
             </div>
         </div>
     )
