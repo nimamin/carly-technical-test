@@ -2,6 +2,7 @@ import { useRouter } from 'next/router'
 import AuthButton from './AuthButton'
 import Langs from './langs'
 import Link from 'next/link'
+import translate from '../../lib/translation'
 const menu = [
     {
         title: 'Home',
@@ -22,6 +23,7 @@ const menu = [
 ]
 export default function Navbar() {
     const router = useRouter()
+    const t = s => translate(s, router.locale)
     return (
         <div id="header">
             <div>
@@ -30,7 +32,7 @@ export default function Navbar() {
                     {menu.map((item, i) => (
                         <li className={(router.pathname === item.href) ? 'selected': '' } key={`menu-item-${i}`}>
                             <Link href={item.href}>
-                                <a>{item.title}</a>
+                                <a>{t(item.title)}</a>
                             </Link>
                         </li>
                     ))}
