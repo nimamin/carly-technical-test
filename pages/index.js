@@ -14,7 +14,7 @@ class IndexPage extends Component {
               <img src="images/satellite.png" alt="" className="satellite"/>
               <h1>SOYUZ TMA-M</h1>
               <h2>SPACECRAFT</h2>
-              <a href="blog.html" class ="more">Read More</a>
+              <a href="blog.html" className="more">Read More</a>
               <h3>FEATURED PROJECTS</h3>
               <ul>
               <li>

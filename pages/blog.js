@@ -9,7 +9,7 @@ export default () => {
     const router = useRouter()
     if (loading) return (<Loading />)
     else if (!session) {
-        router.replace('/login')
+        router.replace('/api/auth/signin')
         return (<></>)
     }
     return (

@@ -1,5 +1,7 @@
 import { useRouter } from 'next/router'
 import AuthButton from './AuthButton'
+import Langs from './langs'
+import Link from 'next/link'
 const menu = [
     {
         title: 'Home',
@@ -27,36 +29,12 @@ export default function Navbar() {
                 <ul id="navigation">
                     {menu.map((item, i) => (
                         <li className={(router.pathname === item.href) ? 'selected': '' } key={`menu-item-${i}`}>
-                            <a href={item.href}>{item.title}</a>
+                            <Link href={item.href}>
+                                <a>{item.title}</a>
+                            </Link>
                         </li>
                     ))}
-                    {/* 
-                    <li>
-                        <a href="index.html">Home</a>
-                    </li>
-                    <li className="selected">
-                        <a href="about.html">About</a>
-                    </li>
-                    <li className="menu">
-                        <a href="projects.html">Projects</a>
-                        <ul className="primary">
-                            <li>
-                                <a href="proj1.html">proj 1</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li className="menu">
-                        <a href="blog.html">Blog</a>
-                        <ul className="secondary">
-                            <li>
-                                <a href="singlepost.html">Single post</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="contact.html">Contact</a>
-                    </li>
-                     */}
+                    <Langs />
                 </ul>
                 <AuthButton />
             </div>

@@ -7,9 +7,10 @@ import Loading from '../components/Loading'
 export default () => {
     const [session, loading] = useSession();
     const router = useRouter()
+    console.log({router})
     if (loading) return (<Loading />);
     else if (!session) {
-        router.replace('/login')
+        router.replace('/api/auth/signin')
         return (<></>)
     }
     return (
